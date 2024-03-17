@@ -8,21 +8,13 @@ export default function Four(props: ThreeElements['mesh']) {
 
 	useFrame((state, delta) => {
 		delta = 0.01;
-		return (
-			(meshRef.current.rotation.z -= Math.random() * delta),
-			(meshRef.current.rotation.y += Math.random() * delta)
-		);
+		return (meshRef.current.rotation.z -= delta);
 	});
 
 	return (
 		<mesh {...props} ref={meshRef}>
-			<capsuleGeometry args={[0.1, 0.4, 200]} />
-			<meshPhysicalMaterial
-				color={'black'}
-				roughness={1}
-				emissive={'red'}
-				emissiveIntensity={1}
-			/>
+			<tetrahedronGeometry args={[0.1]} />
+			<meshPhysicalMaterial emissive={'yellow'} emissiveIntensity={2} />
 		</mesh>
 	);
 }

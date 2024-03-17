@@ -31,17 +31,17 @@ function App() {
 					castShadow
 				/>
 				<spotLight
-					color={'red'}
+					color={'purple'}
 					angle={Math.PI / 5}
-					penumbra={20}
-					position={[0, 2, 2]}
+					penumbra={0.1}
+					position={[0, 3, 2]}
 					intensity={20}
 					castShadow
 				/>
 
-				<Three position={[0, 0, 0]} castShadow />
+				<Three position={[0, 0, 1]} castShadow />
 
-				<Four position={[0, 0, 0]} castShadow />
+				<Four position={[0, 0, 1]} castShadow />
 				<Plane position={[0, -2, 0]} rotation={[-1.8, 0, 0]} receiveShadow={true} />
 				<Plane position={[0, -2, 0]} rotation={[0, 0, 0]} receiveShadow={true} />
 				<Plane position={[2, -2, 0]} rotation={[0, -1.5, 0]} receiveShadow={true} />

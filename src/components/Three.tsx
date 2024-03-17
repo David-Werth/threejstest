@@ -6,16 +6,16 @@ export default function Three(props: ThreeElements['mesh']) {
 	const meshRef = useRef<THREE.Mesh>(null!);
 
 	useFrame((state, delta) => {
-		delta = 0.1;
+		delta = 0.01;
 		return (
-			(meshRef.current.rotation.z += Math.random() * delta * 0.1),
-			(meshRef.current.rotation.x -= Math.random() * delta * 0.2)
+			(meshRef.current.rotation.z += Math.random() * delta),
+			(meshRef.current.rotation.x -= Math.random() * delta)
 		);
 	});
 	return (
 		<mesh {...props} ref={meshRef}>
 			<icosahedronGeometry />
-			<meshPhysicalMaterial roughness={0.2} transmission={0.7} thickness={0.5} />
+			<meshPhysicalMaterial roughness={0.4} transmission={0.8} thickness={0.6} />
 		</mesh>
 	);
 }
